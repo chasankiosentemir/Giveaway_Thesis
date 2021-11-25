@@ -1,0 +1,438 @@
+html{
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  height: 100vh;
+  font-size: 1.6rem;
+  font-family: Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root{
+  height: 100%;
+}
+/* Layout */
+.grid-container{
+  display: grid;
+  grid-template-areas: 
+  'header'
+  'main' 
+  'footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+}
+
+header{
+  grid-area: header;
+  background-color: #F27A1A;
+}
+
+main{
+  grid-area: main;
+  padding: 1rem;
+}
+
+footer{
+  grid-area: footer;
+  background-color: #F27A1A;
+  color: #ffffff;
+}
+
+/* Common */
+h1{
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+
+h2{
+  font-size: 1.6rem;
+  padding: 1rem 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  color: #ffffff;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+li{
+  margin-top: 1rem;
+}
+
+input,
+select,
+textarea{
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.2rem #F27A1A solid;
+  font-size: 1.6rem;
+  color: #000000;
+  letter-spacing: 0.1em;
+  font-family: Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #ffffff;
+}
+
+input:hover,
+select:hover,
+textarea:hover{
+  border: 0.2rem #ff9741 solid;
+}
+
+.primary ,.block{
+  transition: all .3s ease-in-out;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #F27A1A solid;
+  font-size: 1.6rem;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+  font-family: Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #F27A1A;
+  cursor: pointer;
+}
+
+.medium-button{
+  transition: all .3s ease-in-out;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #F27A1A solid;
+  font-size: 1.6rem;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+  font-family: Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #F27A1A;
+  cursor: pointer;
+}
+
+.primary:hover, .block:hover,.medium-button:hover{
+  background: #f58a33;
+}
+
+.disabled-button:hover{
+  background-color: #ff9a47;
+}
+
+
+.disabled-button{
+  background-color: #ff9a47;
+  cursor: auto;
+}
+
+
+
+.block{
+  width: 100%;
+}
+
+button.small {
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+/* Header */
+
+header a{
+  color: #ffffff;
+  padding: 0 0.9rem 0.2rem 0.9rem;
+  display: inline-block;
+  position: relative;
+}
+
+header a:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    font-weight: bold;
+}
+
+header a:hover{
+  font-weight: bold;
+}
+
+header a:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+
+a.brand{
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: 'Lobster', cursive;
+}
+
+.badge{
+  background-color: #ffffff;
+  color: #F27A1A;
+  border-radius: 50%;
+  padding: 0.2rem 0.7rem;
+  font-size: 1.4;
+  margin-left: 0.3rem;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row.top{
+  align-items: center;
+}
+
+.row.center{
+  justify-content: center;
+}
+.col-1{
+  flex: 1 1 25rem;
+}
+
+.col-2{
+  flex: 2 1 50rem;
+}
+
+.min-30{
+  min-width: 30rem;
+}
+
+.min-30 a{
+  color: #000000;
+}
+
+
+.min-30 a:hover{
+  color: #F27A1A;
+}
+/* Image */
+img{
+  border-radius: 0.5rem;
+}
+
+img.small{
+  max-width: 5rem;
+  width: 100%;
+}
+
+img.medium{
+  max-width: 29rem;
+  max-height: 100%;
+  
+}
+
+img.large{
+  max-width: 100%;
+ 
+}
+
+/* Card */
+.card{
+  border: 0.1rem  #c0c0c0 solid;
+  background-color: #f8f8f8;
+  border-radius: 0.5rem;
+  margin: 1rem; 
+  height: 60rem;
+}
+
+.payment-card{
+  border: 0.1rem  #c0c0c0 solid;
+  background-color: #f8f8f8;
+  border-radius: 0.5rem;
+  margin: 1rem; 
+}
+
+.card-body{
+  padding: 1rem;
+}
+
+.card-body > * { 
+  margin-bottom: 0.5rem;
+}
+.card-body a:hover{
+  color: #F27A1A;
+}
+
+.card-body a{
+  color: #333333;
+}
+
+.price{
+  font-size: 2rem;
+  color: #F27A1A;
+}
+
+.checkout-body{
+  border: 0.2rem #F27A1A solid;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-left: 2rem;
+
+}
+
+
+/* Rating */
+
+.rating span{
+  color: #FFC000;
+}
+
+.rating span:last-child{
+  color: #333333;
+}
+
+/* Alert */
+
+.success{
+  color: #20a020;
+}
+
+.danger{
+  color: #FF0000;
+}
+
+.alert{
+  padding: 1rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+}
+
+.alert-info{
+  color: #ffffff;
+  background-color: #f58a33;
+}
+
+.alert-success {
+  color: #20a020;
+  background-color: #eeffe0;
+}
+
+.alert-info a{
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.alert-danger{
+  color: #FF0000;
+  background-color: #ffe0e0e0;
+}
+
+.loading-spin{
+  color: #F27A1A;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.bold-size{
+  font-weight: bold;
+}
+
+/* Form */
+
+.form{
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.form > div{
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.form label{
+  margin: 1rem 0 ;
+}
+
+form a{
+  color: #000000;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.form a:hover{
+  color: #F27A1A;
+}
+
+/* Dropdown */
+.dropdown{
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-content{
+  position: absolute;
+  display: none;
+  right: 0;
+  min-width: 15rem;
+  padding: 1rem;
+  z-index: 1;
+  background-color: #F27A1A;
+  margin: 0;
+  border-radius: 0.5rem;
+}
+
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+/* Checkout Steps */
+
+.checkout-steps > div{
+  border-top: 0.3rem #c0c0c0 solid;
+  color: #c0c0c0;
+  flex: 1;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.checkout-steps > div.active{
+  border-top-color: #F27A1A;
+  color: #F27A1A;
+}
+
+/* Table */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table tbody tr:nth-of-type(odd) {
+  background-color: #ffa861;
+}
+.table td,
+.table th {
+  text-align: left;
+  border: 0.1rem solid #e4e4e4;
+  padding: 1rem;
+}
+.table button {
+  margin: 0 0.2rem;
+  padding: 0.5rem;
+}
