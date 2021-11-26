@@ -8,7 +8,6 @@ const orderRouter = express.Router();
 orderRouter.get(
   "/",
   isAuth,
-  isAdmin,
   isSellerOrAdmin,
   expressAsyncHandler(async (req, res) => {
     const seller = req.query.seller || "";

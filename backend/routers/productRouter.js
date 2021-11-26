@@ -9,13 +9,26 @@ const productRouter = express.Router();
 productRouter.get(
   "/",
   expressAsyncHandler(async (req, res) => {
+    const category = req.query.category || "";
+    const categoryFilter = category ? { category } : {};
+    const name = req.query.name || "";
     const seller = req.query.seller || "";
+    const nameFilter = name ? { name: { $regex: name, $options: "i" } } : {};
     const sellerFilter = seller ? { seller } : {};
-    const products = await Product.find({ ...sellerFilter }).populate(
-      "seller",
-      "seller.name seller.logo"
-    );
+    const products = await Product.find({
+      ...sellerFilter,
+      ...nameFilter,
+      ...categoryFilter,
+    }).populate("seller", "seller.name seller.logo");
     res.send(products);
+  })
+);
+
+productRouter.get(
+  "/categories",
+  expressAsyncHandler(async (req, res) => {
+    const categories = await Product.find().distinct("category");
+    res.send(categories);
   })
 );
 
@@ -45,7 +58,6 @@ productRouter.get(
 productRouter.post(
   "/",
   isAuth,
-  isAdmin,
   isSellerOrAdmin,
   expressAsyncHandler(async (req, res) => {
     const product = new Product({
@@ -68,7 +80,6 @@ productRouter.post(
 productRouter.put(
   "/:id",
   isAuth,
-  isAdmin,
   isSellerOrAdmin,
   expressAsyncHandler(async (req, res) => {
     const productId = req.params.id;
