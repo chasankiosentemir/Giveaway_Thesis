@@ -33,6 +33,9 @@ export default function SellerScreen(props) {
           <MessageBox variant="danger">{error}</MessageBox>
         ) : (
           <ul className="payment-card card-body">
+            <div className="row center">
+              <h1 className="seller-header">Seller Information</h1>
+            </div>
             <li>
               <div className="row start">
                 <div className="p-1">

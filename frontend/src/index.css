@@ -180,6 +180,10 @@ header a:after {
   transition: transform 0.25s ease-out;
 }
 
+.seller-header {
+  color: #f27a1a;
+}
+
 a.brand {
   color: #ffffff;
   font-size: 3rem;
@@ -442,4 +446,8 @@ table {
 .table button {
   margin: 0 0.2rem;
   padding: 0.5rem;
+}
+
+.carousel .slide img {
+  max-width: 30rem;
 }
