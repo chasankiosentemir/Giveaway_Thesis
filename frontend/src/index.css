@@ -509,3 +509,7 @@ button.close-sidebar {
 .categories a {
   color: #f27a1a;
 }
+
+.active {
+  font-weight: bold;
+}
