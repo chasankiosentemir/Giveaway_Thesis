@@ -513,3 +513,23 @@ button.close-sidebar {
 .active {
   font-weight: bold;
 }
+
+.side-nav {
+    background-color: #F27A1A;
+    height: 100vh;
+    padding: 1rem 1rem 1rem 2rem;
+    border-radius: 0.5rem;
+}
+
+.side-nav a{
+  color: #ffffff;
+}
+
+.side-nav a:hover{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.side-nav {
+  color: #ffffff;
+}
