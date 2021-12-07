@@ -140,7 +140,7 @@ productRouter.put(
 productRouter.delete(
   "/:id",
   isAuth,
-  isAdmin,
+  isSellerOrAdmin,
   expressAsyncHandler(async (req, res) => {
     const product = await Product.findById(req.params.id);
     if (product) {
