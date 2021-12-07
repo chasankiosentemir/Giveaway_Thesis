@@ -91,7 +91,7 @@ export default function SearchScreen(props) {
                       className={"all" === category ? "active" : ""}
                       to={getFilterUrl({ category: "all" })}
                     >
-                      Any
+                      All
                     </Link>
                   </li>
                   {categories.map((c) => (
