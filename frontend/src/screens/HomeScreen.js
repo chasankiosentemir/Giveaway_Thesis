@@ -21,7 +21,6 @@ export default function HomeScreen() {
     users: sellers,
   } = userTopSellersList;
 
-  //Send AJAX request to backend.
   useEffect(() => {
     dispatch(listProducts({}));
     dispatch(listTopSellers());
@@ -32,7 +31,7 @@ export default function HomeScreen() {
       {loadingSellers ? (
         <LoadingBox></LoadingBox>
       ) : errorSellers ? (
-        <MessageBox variant="danger">{errorSellers}</MessageBox>
+        <MessageBox variant='danger'>{errorSellers}</MessageBox>
       ) : (
         <>
           {sellers.length === 0 && <MessageBox>No Seller Found</MessageBox>}
@@ -41,7 +40,7 @@ export default function HomeScreen() {
               <div key={seller._id}>
                 <Link to={`/seller/${seller._id}`}>
                   <img src={seller.seller.logo} alt={seller.seller.name} />
-                  <p className="legend">{seller.seller.name}</p>
+                  <p className='legend'>{seller.seller.name}</p>
                 </Link>
               </div>
             ))}
@@ -50,15 +49,15 @@ export default function HomeScreen() {
       )}
       <h2>Featured Products</h2>
       {loading ? (
-        <div className="loading-spin">
+        <div className='loading-spin'>
           <LoadingBox></LoadingBox>
         </div>
       ) : error ? (
-        <MessageBox variant="danger">{error}</MessageBox>
+        <MessageBox variant='danger'>{error}</MessageBox>
       ) : (
         <>
           {products.length === 0 && <MessageBox>No Product Found</MessageBox>}
-          <div className="row center">
+          <div className='row center'>
             {products.map((product) => (
               <Product key={product._id} product={product}></Product>
             ))}

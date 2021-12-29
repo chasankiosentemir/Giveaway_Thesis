@@ -87,7 +87,7 @@ productRouter.get(
     if (product) {
       res.send(product);
     } else {
-      res.status(404).send({ message: "Product Not Founded" });
+      res.status(500).send({ message: "Product Not Founded" });
     }
   })
 );

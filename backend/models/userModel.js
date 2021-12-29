@@ -9,7 +9,10 @@ const userSchema = new mongoose.Schema(
     isSeller: { type: Boolean, default: false, required: true },
     seller: {
       name: { type: String, default: "Default Seller" },
-      logo: { type: String, default: "images/default-logo.png" },
+      logo: {
+        type: String,
+        default: "images/default-logo.png",
+      },
       description: { type: String, default: "Default Seller" },
       rating: { type: Number, default: 0, required: true },
       numReviews: { type: Number, default: 0, required: true },
